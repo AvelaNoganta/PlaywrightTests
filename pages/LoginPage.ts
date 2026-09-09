@@ -18,7 +18,6 @@ export class LoginPage extends BasePage {
         await this.ClickElement(this.page.locator('xpath=//button[contains(.,"Login")]'));
     }
        get verifyHomePageHeading(): Locator {
-        // return this.page.getByRole('heading', { name: /Welcome\s*back123/i }); 
         // //regex  for case insensitive match and to ignore any whitespace between "Welcome" and "back"
         return this.page.getByRole('heading', { name: /Welcome\s*back/i }); //Restore working regex
     }
