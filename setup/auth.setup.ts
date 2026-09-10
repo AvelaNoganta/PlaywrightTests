@@ -1,4 +1,4 @@
-import { test as setup, expect } from '@playwright/test';
+import { test as setup} from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { validUsers } from '../testdata/testdata';
 
@@ -9,6 +9,7 @@ setup('authenticate', async ({ page }) => {
     await loginPage.navigateToLoginPage();
     await loginPage.userLogin(validUsers.admin.username, validUsers.admin.password);
     await loginPage.VerifyElementIsVisible(loginPage.verifyHomePageHeading);
+    // Save authentication state to a file
     await page.context().storageState({
         path: authFile
     });
