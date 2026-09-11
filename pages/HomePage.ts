@@ -7,5 +7,7 @@ export class HomePage extends BasePage {
       
         await this.ClickElement(this.page.locator('xpath=//button//span[text() = "Menu"]'));
         await this.ClickElement(this.page.locator('xpath=//span[contains(.,"My Profile")]'));
+
+        await this.page.waitForLoadState('networkidle');
     }
 }

@@ -10,3 +10,8 @@ export const validUsers = {
     }
 
 };
+export const userProfile = {
+    gitusername: {
+        username: 'admin@gmail.com',
+    }
+};
