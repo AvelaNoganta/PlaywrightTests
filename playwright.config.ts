@@ -35,9 +35,9 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-        name: 'setup',
-        testDir: './setup',
-        testMatch: /.*\.setup\.ts/,
+        name: 'setup', // Project identifier for setup/authentication tasks, you can name this project anything you like
+        testDir: './setup', // Directory containing setup test files
+        testMatch: /.*\.setup\.ts/, // Matches files ending with .setup.ts (e.g., auth.setup.ts)
     },
     {
         name: 'chromium',
@@ -45,6 +45,7 @@ export default defineConfig({
             ...devices['Desktop Chrome'],
             storageState: 'playwright/.auth/user.json',
         },
+        //The 'chromium' project depends on the 'setup' project
         dependencies: ['setup'],
     },
 
