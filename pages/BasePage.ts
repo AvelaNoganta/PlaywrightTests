@@ -8,9 +8,11 @@ export class BasePage {
         await this.page.goto(url);
     }
 
-    async ClickElement(locator: Locator) {
-        await locator.click();
-    }
+async ClickElement(locator: Locator){
+    await locator.scrollIntoViewIfNeeded();
+    await locator.waitFor({ state: 'visible' });
+    await locator.click();
+}
 
     async EnterText(locator: Locator, text: string) {
         await locator.fill(text);
